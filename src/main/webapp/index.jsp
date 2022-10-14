@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Roll a dice</h1>
-    <div id="root">
+    <div id="dice-section">
         <h3>Result:
             <!-- Assign the result of the dice roll to the text of this element -->
             <span data-diceoutput> </span>

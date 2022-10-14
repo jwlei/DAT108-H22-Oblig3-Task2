@@ -1,13 +1,13 @@
+"use strict";
+
+import { Dice } from "./Dice.js";
+
+
 /**
  * Class: DiceController
  * @param {string} elementId
  * @returns {string}
  */
-
-"use strict";
-
-import { Dice } from "./Dice.js";
-
 class DiceController {
 
     /**
@@ -23,12 +23,12 @@ class DiceController {
             this.rollDice = this.rollDice.bind(this);
 
             // We get the root element
-            this.root = document.getElementById(elementId);
+            this.diceElement = document.getElementById(elementId);
 
             // Assign the button and output to the id = root with
             // the data-dicebutton and data-diceoutput attributes
-            this.button = this.root.querySelector('*[data-dicebutton]')
-            this.output = this.root.querySelector('*[data-diceoutput]');
+            this.button = this.diceElement.querySelector('*[data-dicebutton]')
+            this.output = this.diceElement.querySelector('*[data-diceoutput]');
 
             // Create a new Dice object
             this.dice = new Dice();
@@ -46,8 +46,8 @@ class DiceController {
         }
 }
 
-// We create a new DiceController object with the argument "root"
-const diceController = new DiceController("root");
+// We create a new DiceController object with argument elementId = dice-section
+const diceController = new DiceController("dice-section");
 
 // We add the event listener to the DOMContentLoaded event and call the run method
 document.addEventListener("DOMContentLoaded", diceController.run, true);
